@@ -1,11 +1,20 @@
+import { Link } from 'react-router-dom'
+
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2>IntellMeet</h2>
+      <Link to="/">
+        <h2>IntellMeet</h2>
+      </Link>
 
       <div className="nav-buttons">
-        <button>Login</button>
-        <button>Register</button>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+
+        <Link to="/register">
+          <button>Register</button>
+        </Link>
       </div>
     </nav>
   )

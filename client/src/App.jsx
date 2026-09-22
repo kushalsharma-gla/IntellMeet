@@ -1,26 +1,20 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
-  function handleClick() {
-  alert("Welcome to IntellMeet!")
-}
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
 
-      <main className="hero">
-        <h1>AI-Powered Meeting Platform</h1>
-
-        <p>
-          Conduct smarter meetings with video, chat and
-          AI-powered collaboration tools.
-        </p>
-
-        <button className="get-started" onClick={handleClick}>
-  Get Started
-</button>
-      </main>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
